@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from main.views  import index, place_json
+from places.views  import index, place_json
 from django.conf import settings
 from django.conf.urls.static import static
 
