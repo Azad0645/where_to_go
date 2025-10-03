@@ -7,7 +7,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('main', '0001_initial'),
+        ('places', '0001_initial'),
     ]
 
     operations = [
@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('image', models.ImageField(upload_to='places_images/', verbose_name='Фото')),
                 ('order', models.PositiveIntegerField(default=0, verbose_name='Порядок')),
-                ('place', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='images', to='main.place', verbose_name='Место')),
+                ('place', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='images', to='places.place', verbose_name='Место')),
             ],
             options={
                 'ordering': ['order'],
