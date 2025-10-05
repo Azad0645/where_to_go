@@ -27,7 +27,7 @@ def index(request):
     }
 
     return render(request, 'index.html', {
-        'places_geojson': json.dumps(places_geojson, ensure_ascii=False)
+        'places_geojson':  places_geojson
     })
 
 
