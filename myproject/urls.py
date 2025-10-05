@@ -24,7 +24,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
-    path('places/<int:pk>.json', place_json, name='place-json'),
+    path('places/<int:pk>/', place_json, name='place_json'),
     path('tinymce/', include('tinymce.urls')),
 ]
 if settings.DEBUG:
