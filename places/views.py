@@ -34,7 +34,7 @@ def index(request):
 def place_json(request, pk):
     place = get_object_or_404(Place.objects.prefetch_related('images'), pk=pk)
 
-    data  = {
+    place_data  = {
         'title': place.title,
         'imgs': [img.image.url for img in place.images.all()],
         'description_short': place.short_description,
@@ -44,4 +44,5 @@ def place_json(request, pk):
             'lng': place.longitude
         }
     }
-    return JsonResponse(data, json_dumps_params={'ensure_ascii': False})
+
+    return JsonResponse(place_data, json_dumps_params={'ensure_ascii': False})
